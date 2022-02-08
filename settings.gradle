@@ -8,4 +8,6 @@
  */
 
 rootProject.name = 'myproject'
+apply from: "${rootDir}/gradle/scripts/settings-flags.gradle"
+
 include('app')
