@@ -62,7 +62,8 @@ nexusPublishing {
 
 configure(projectsWithFlags('publish')) {
     apply plugin: 'maven-publish'
-
+    apply plugin: 'io.github.gradle-nexus.publish-plugin'
+    
     if (project.ext.isSigning()) {
         apply plugin: 'signing'
 

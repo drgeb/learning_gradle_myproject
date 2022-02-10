@@ -1,0 +1,7 @@
+plugins {
+       id 'com.google.osdetector' version '1.6.2'
+   }
+
+   apply from: "${rootDir}/gradle/scripts/build-flags.gradle"
+//    apply plugin: 'io.github.gradle-nexus.publish-plugin'
+//    apply plugin: 'com.bmuschko.nexus'
