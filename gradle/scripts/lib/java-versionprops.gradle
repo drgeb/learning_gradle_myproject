@@ -39,6 +39,10 @@ configure(projectsWithFlags('java', 'publish')) {
         }
     }
 
+    tasks.processResources {
+        duplicatesStrategy = 'include'
+    }
+    
     // Ensure version.properties is available during the build.
     tasks.sourcesJar.dependsOn(tasks.versionProperties)
     tasks.processResources.dependsOn(tasks.versionProperties)

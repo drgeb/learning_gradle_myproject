@@ -68,6 +68,10 @@ configure(projectsWithFlags('java')) {
     java {
         withJavadocJar()
         withSourcesJar()
+        tasks.sourcesJar {
+            duplicatesStrategy = 'include'
+        }
+ 
 
         // Adds an optional configuration that can be used to define optional dependencies. While it's more
         // idiomatic to define features for each set of optional dependencies (e.g., "prometheus",
