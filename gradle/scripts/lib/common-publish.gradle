@@ -49,21 +49,19 @@ subprojects {
     }
 }
 
-nexusPublishing {
-    repositories {
-        sonatype {
-            nexusUrl.set(uri(publishUrlForRelease - "staging/deploy/maven2/"))
-            snapshotRepositoryUrl.set(uri(publishUrlForSnapshot))
-            username = project.findProperty(publishUsernameProperty)
-            password =  project.findProperty(publishPasswordProperty)
-        }
-    }
-}
+repositories {
+    maven {
+    name 'nexus'
+    url "http://[your nexus ip]:[your nexus port]/repository/maven-releases/"
+    credentials {
+        username rootProject.findProperty('repoUser')
+        password rootProject.findProperty('repoPassword')
+}}}
 
 configure(projectsWithFlags('publish')) {
     apply plugin: 'maven-publish'
-    apply plugin: 'io.github.gradle-nexus.publish-plugin'
-    
+    // apply plugin: 'io.github.gradle-nexus.publish-plugin'
+
     if (project.ext.isSigning()) {
         apply plugin: 'signing'
 
