@@ -8,8 +8,8 @@ buildscript {
 
     dependencies {
         // These should be the only dependencies that need hard-coded versions.
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.39.0'
-        classpath 'org.yaml:snakeyaml:1.29'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.42.0'
+        classpath 'org.yaml:snakeyaml:1.30'
     }
 }
 
