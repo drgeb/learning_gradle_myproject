@@ -1,21 +1,9 @@
 plugins {
-    id 'com.google.osdetector' version '1.6.2'
-    id "maven-publish"
-    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+    id 'com.google.osdetector' version '1.6.2' apply false
 }
 
-   apply from: "${rootDir}/gradle/scripts/build-flags.gradle"
-//    apply plugin: 'io.github.gradle-nexus.publish-plugin'
-//    apply plugin: 'com.bmuschko.nexus'
+apply from: "${rootDir}/gradle/scripts/build-flags.gradle"
 
-nexusPublishing {
-    repositories {
-        myNexusLocal {
-            nexusUrl = uri("http://nexus-local:3381/repository/maven-releases/")
-            snapshotRepositoryUrl = uri("http://nexus-local:3381/repository/maven-snapshots/")
-            username = myNexusUsername // defaults to project.properties["myNexusUsername"]
-            password = myNexusPassword // defaults to project.properties["myNexusPassword"]
-            allowInsecureProtocol = true
-        }
-    }
+allprojects {
+    println "Project '${project.path}' has flags: ${project.flags}"
 }

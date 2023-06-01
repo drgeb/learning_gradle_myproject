@@ -11,4 +11,3 @@ rootProject.name = 'myproject'
 apply from: "${rootDir}/gradle/scripts/settings-flags.gradle"
 
 includeWithFlags ':app', 'java', 'publish'
-includeWithFlags ':bar', 'java'

@@ -97,8 +97,8 @@ sensible defaults. By applying them, you can:
    version=0.0.1-SNAPSHOT
    projectName=My Example
    projectUrl=https://www.example.com/
-   projectDescription=My example project
    authorName=John Doe
+   projectDescription=My example project
    authorEmail=john@doe.com
    authorUrl=https://john.doe.com/
    inceptionYear=2018
@@ -177,7 +177,7 @@ configure(projectsWithFlags('java')) {
     // Common dependencies
     dependencies {
         compileOnly 'com.google.code.findbugs:jsr305'
-        compile 'com.google.guava:guava'
+        api 'com.google.guava:guava'
     }
 }
 
@@ -296,6 +296,7 @@ Some flags, such as `java`, are used for configuring your projects
 automatically:
 
 - `java` - Makes a project build a Java source code
+./gradlq
 - `publish` - Makes a project publish its artifact to a Maven repository
 - `bom` - Makes a project publish Maven BOM based on `dependencies.yml`
 - `shade`, `relocate` and `trim` - Makes a Java project produce an additional 'shaded' JAR
@@ -567,7 +568,7 @@ for more information.
        dependencies {
            // Except ':common' itself.
            if (project != project(':common')) {
-               compile project(':common')
+               api project(':common')
            }
        }
    }
